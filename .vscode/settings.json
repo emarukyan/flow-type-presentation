@@ -1,0 +1,12 @@
+{
+    "flow.pathToFlow": "./node_modules/.bin/flow-typed",
+    "flow.stopFlowOnExit": true,
+    "flow.enabled": true,
+    "flow.showStatus": true,
+    "flow.runOnEdit": true,
+    "javascript.validate.enable": false,
+    "javascript.format.enable": false,
+    "flow.useNPMPackagedFlow": true,
+    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true
+}

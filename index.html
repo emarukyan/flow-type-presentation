@@ -30,7 +30,36 @@
 						<h2>FlowType In Action</h2>
 					</section>
 					<section>
-						v1
+						<p>Simple Type Checking.</p>
+						<pre><code class="javascript" contenteditable data-trim>
+								// @flow
+								function square(n: number): number {
+									return n * n;
+								}
+
+								square("2"); // Error!</code></pre>
+						<pre class="fragment"><code class="javascript" contenteditable data-trim>
+								// @flow
+								function square(n) {
+									return n * n; // Error!
+								}
+								
+								square("2");</code></pre>
+					</section>
+					<section>
+							v2
+					</section>
+					<section>
+							v2
+					</section>
+					<section>
+							v2
+					</section>
+					<section>
+							v2
+					</section>
+					<section>
+							v2
 					</section>
 					<section>
 							v2
@@ -216,6 +245,17 @@
 						- How to proceed.
 						Start small, and add types gradually.
 						make use of flow-remove-types package.
+					</p>
+				</section>
+
+				<section>
+					<h1>Thank you!</h1>
+					
+					<h2>Questions / Discussion</h2>
+
+					<p>
+							Edgar Marukyan. CTO at <a href="https://www.renderforest.com/">RenderForest</a>
+							<br />Thanks to: <a href="http://zeigermann.eu">Oliver Zeigermann</a>
 					</p>
 				</section>
 
