@@ -1,79 +1,109 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h2 style="text-transform: none;">Static Type Checking in JavaScript with FlowType</h2>
+				<p>
+					<b>Edgar Marukyan</b>
+				</p>
+			</section>
+
+			<!-- Contents. -->
+			<section>
+				<h2>Contents</h2>
+				<ul>
+					<li class="fragment">What is FlowType?</li>
+					<li class="fragment">Why do we need that?</li>
+					<li class="fragment">Our use case.</li>
+					<li class="fragment">FlowType vs TypeScript.</li>
+					<li class="fragment">FlowType in action.</li>
+					<li class="fragment">When should I use a type checker?</li>
+					<li class="fragment">How to proceed?</li>
+				</ul>
+			</section>
+
+			<!-- What is a FlowType -->
+			<section>
+				<h2>What is a FlowType?</h2>
+				<p class="fragment">FLOW IS A STATIC TYPE CHECKER FOR JAVASCRIPT.</p>
+				<aside class="notes">
+					-Runtime checking vs Static checking Ռանթայմ ստուգումը կատարվում է բռաուզեռում կամ սերվերային միջավայրում, որի ժամանակ ստացված
+					սխալները շատ հաճախ ծրագիրը դարձնում են անվերականգնելի կամ անկանխատեսելի։ Ինչպես գիտենք, JavaScript֊ը խիստ տիպիզացված
+					լեզու չէ, և փոփոխականների տիպերը որոշվում են ծրագրի աշխատանքի ժամանակ, և ոչ թե նախօրոք՝ այն գրելու ընթացքում։ FlowType֊ը
+					հնարավորություն է ընձեռնում ձեր JavaScript֊ի ծրագրի մեջ ավելացնել փոփոխականների տիպեր և կատարել անհրաժեշտ ստուգումները
+					մինչև ծրագիրը կհասնի օգտատերերին։
+				</aside>
+			</section>
+
+			<!-- Why do we need that? -->
+			<section>
+				<h2>Why do we need that?</h2>
+				<ul>
+					<li class="fragment">Removing Doubt From Complexity</li>
+					<li class="fragment">Makes code more clear/readable</li>
+					<li class="fragment">Better IDE support</li>
+					<li class="fragment">Refactor safely.</li>
+					<li class="fragment">Collaborate safely.</li>
+					<li class="fragment">Grow codebase safely.</li>
+					<li class="fragment">Skip corner cases in unit tests.</li>
+					<li class="fragment">Deploy with confident.</li>
+					<li class="fragment">Reduce runtime errors to 0.</li>
+					<li class="fragment">Sleep well :)</li>
+				</ul>
+			</section>
+
+			<!-- Our Use Case -->
+			<section>
+				<h2>Our Use Case</h2>
+				<p class="fragment">
+					We have got a huge ReactJs/Redux app
+				</p>
+				<p class="fragment">
+					-can be extended, supported and maintained easily.
+				</p>
+				<p class="fragment">
+					-which has the fastest deplyment cycle in our company.
+				</p>
+				<aside class="notes">
+					երբեմն օրական 5-10 deployment ունենք. և հիմա կամաց կիրառում ենք FlowType֊ը նաև backend Node պռոյեկտների վրա։
+				</aside>
+			</section>
+
+			<!-- FlowType Vs TypeScript -->
+			<section>
 				<section>
-					<section>
-						<h2>FlowType In Action</h2>
-					</section>
-					<section>
-						<p>Simple Type Checking.</p>
-						<pre><code class="javascript" contenteditable data-trim>
-								// @flow
-								function square(n: number): number {
-									return n * n;
-								}
-
-								square("2"); // Error!</code></pre>
-						<pre class="fragment"><code class="javascript" contenteditable data-trim>
-								// @flow
-								function square(n) {
-									return n * n; // Error!
-								}
-								
-								square("2");</code></pre>
-					</section>
-					<section>
-							v2
-					</section>
-					<section>
-							v2
-					</section>
-					<section>
-							v2
-					</section>
-					<section>
-							v2
-					</section>
-					<section>
-							v2
-					</section>
-					<section>
-							v2
-					</section>
+					<h2>FlowType vs TypeScript</h2>
+					<h1 class="fragment">FlowType does not believe in you!</h1>
 				</section>
-
 				<section>
-					<section>
-						<h2>FlowType vs TypeScript</h2>
-						<h1 class="fragment">FlowType does not believe in you!</h1>
-					</section>
-					<section>
-							<h3>TypeScript</h3>
-							<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<h3>TypeScript</h3>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 								function foo(num: number) {
 									if (num > 10) {
 										return 'cool';
@@ -81,28 +111,28 @@
 								}
 								</code>
 							</pre>
-							<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 								// cool
 								const result: string = foo(100);
 								console.log(result.toString());
 							</code></pre>
 
-							<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							// still cool?
 							console.log(foo(1).toString());
 							</code></pre>
 
-							<pre class="fragment"><code contenteditable data-trim>
+					<pre class="fragment"><code contenteditable data-trim>
 							// error at runtime
 							"Cannot read property 'toString' of undefined"
 							</code></pre>
-							
-							<p class="fragment">TypeScript does not catch this</p>
-					</section>
 
-					<section>
-						<h3>Flow</h3>
-						<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<p class="fragment">TypeScript does not catch this</p>
+				</section>
+
+				<section>
+					<h3>Flow</h3>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							function foo(num: number) {
 								if (num > 10) {
 									return 'cool';
@@ -113,13 +143,13 @@
 							// Method cannot be called on possibly null value
 							console.log(foo(100).toString());
 							</code></pre>
-						<p class="fragment">Flow does catch this</p>
-							<p class="fragment">But why?</p>
-					</section>
-					<section>
-						<h4>Flow does not infer string as the return type</h4>
-						<p class="fragment">The inferred type is something else</p>
-						<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<p class="fragment">Flow does catch this</p>
+					<p class="fragment">But why?</p>
+				</section>
+				<section>
+					<h4>Flow does not infer string as the return type</h4>
+					<p class="fragment">The inferred type is something else</p>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							// error: return undefined.
 							// This type is incompatible with string
 							function foo(num: number): string {
@@ -128,7 +158,7 @@
 								}
 							}
 							</code></pre>
-						<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							// nullable type: the one inferred
 							function foo(num: number): ?string {
 								if (num > 10) {
@@ -136,133 +166,270 @@
 								}
 							}
 							</code></pre>
-						<pre class="fragment"><code class="typescript" contenteditable data-trim>
+					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							// to fix this, we need to check the result
 							const fooed: ?string = foo(100);
 							if (fooed) {
 								fooed.toString();
 							}
 							</code></pre>
-					</section>
-					<aside class="notes">
-						Այստեղ կբերեմ ընդամենը մեկ առավելություն, որը կոնկրետ ինձ համար որոշիչ է այս երկուսի ընտրության հարցում։ Դա այն է. որ TypeScript֊ը հավատում է ձեր գրած տիպերին և խորքային իրական ստուգում չի իրականացնում:
-					</aside>
 				</section>
+				<aside class="notes">
+					Այստեղ կբերեմ ընդամենը մեկ առավելություն, որը կոնկրետ ինձ համար որոշիչ է այս երկուսի ընտրության հարցում։ Դա այն է. որ TypeScript֊ը
+					հավատում է ձեր գրած տիպերին և խորքային իրական ստուգում չի իրականացնում:
+				</aside>
+			</section>
 
+			<!-- FlowType in action -->
+			<section>
 				<section>
-					<h2>Our Use Case</h2>
-						<p class="fragment">
-							We have got a huge ReactJs/Redux app
-						</p>
-						<p class="fragment">
-							-can be extended, supported and maintained easily.
-						<p>
-						<p class="fragment">
-							-which has the fastest deplyment cycle in our company.
-						</p>
-						<aside class="notes">
-								երբեմն օրական 5-10 deployment ունենք.
-								և հիմա կամաց կիրառում ենք FlowType֊ը նաև backend Node պռոյեկտների վրա։
-						</aside>
+					<h2>FlowType In Action</h2>
 				</section>
-
 				<section>
-						<h2>Why do we need that?</h2>
-						<p class="fragment">Catch errors early</p>
-						<p class="fragment">Makes code more clear/readable</p>
-						<p class="fragment">Better IDE support</p>
-						<p class="fragment">Refactor safely.</p>
-						<p class="fragment">Collaborate safely.</p>
-						<p class="fragment">Grow codebase safely.</p>
-						<p class="fragment">Skip corner cases in unit tests.</p>
-						<p class="fragment">Deploy with confident.</p>
-						<p class="fragment">Reduce runtime errors to 0.</p>
-						<p class="fragment">Sleep well :)</p>
+					<p>Basic Types in Flow</p>
+					<ul>
+						<li>Booleans</li>
+						<li>Strings</li>
+						<li>Numbers</li>
+						<li>null</li>
+						<li>undefined (void in Flow types)</li>
+					</ul>
 				</section>
-
 				<section>
-					<h2>What is a FlowType?</h2>
-					<p class="fragment">FLOW IS A STATIC TYPE CHECKER FOR JAVASCRIPT.</p>
-					<aside class="notes">
-							-Runtime checking vs Static checking
-							Ռանթայմ ստուգումը կատարվում է բռաուզեռում կամ սերվերային միջավայրում, որի ժամանակ ստացված սխալները շատ հաճախ ծրագիրը դարձնում են անվերականգնելի կամ անկանխատեսելի։
+					<p>Simple Type Checking.</p>
+					<pre><code class="javascript" contenteditable data-trim>
+						// @flow
+						function square(n: number): number {
+							return n * n;
+						}
 
-							Ինչպես գիտենք, JavaScript֊ը խիստ տիպիզացված լեզու չէ, և փոփոխականների տիպերը որոշվում են ծրագրի աշխատանքի ժամանակ, և ոչ թե նախօրոք՝ այն գրելու ընթացքում։
+						square("2"); // Error
+					</code></pre>
+					<small class="fragment">
+						string (This type is incompatible with the expected param type of number)
+					</small>
+					<pre class="fragment"><code class="javascript" contenteditable data-trim>
+						// @flow
+						function square(n) {
+							return n * n;  // Error
+						}
+
+						square("2");</code></pre>
+					<small class="fragment">
+						string (The operand of an arithmetic operation must be a number.)
+					</small>
+				</section>
+				<section>
+					<pre><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsBoolean(value: boolean) {
+							  // ...
+							}
+
+							acceptsBoolean(true);  // Works!
+							acceptsBoolean(false); // Works!
+							acceptsBoolean("foo"); // Error!
 							
-							FlowType֊ը հնարավորություն է ընձեռնում ձեր JavaScript֊ի ծրագրի մեջ ավելացնել փոփոխականների տիպեր և կատարել անհրաժեշտ ստուգումները մինչև ծրագիրը կհասնի օգտատերերին։
+							if (42) {} // 42 => true
+							if ("") {} // "" => false							
+						</code></pre>
+				</section>
+				<section>
+					<pre><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsBoolean(value: boolean) {
+							  // ...
+							}
+							
+							acceptsBoolean(0);          // Error!
+							acceptsBoolean(Boolean(0)); // Works!
+							acceptsBoolean(!!0);        // Works!
+						</code></pre>
+				</section>
+				<section>
+					<pre><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsNumber(value: number) {
+							  // ...
+							}
+							
+							acceptsNumber(42);       // Works!
+							acceptsNumber(3.14);     // Works!
+							acceptsNumber(NaN);      // Works!
+							acceptsNumber(Infinity); // Works!
+							acceptsNumber("foo");    // Error!
+						</code></pre>
+					<aside class="notes">JavaScript also considers Infinity and NaN to be numbers.</aside>
+				</section>
+				<section>
+					<pre><code class="javascript" contenteditable data-trim>
+						// @flow
+						function acceptsString(value: string) {
+						  // ...
+						}
+						
+						acceptsString("foo"); // Works!
+					</code></pre>
+				</section>
+				<section>
+					<pre><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsNull(value: null) {
+								/* ... */
+							}
+							
+							function acceptsUndefined(value: void) {
+								/* ... */
+							}
+							
+							acceptsNull(null);      // Works!
+							acceptsNull(undefined); // Error!
+							acceptsUndefined(null);      // Error!
+							acceptsUndefined(undefined); // Works!
+						</code></pre>
+					<aside class="notes">
+						JavaScript has both null and undefined. Flow treats these as separate types: null and void (for undefined).
 					</aside>
 				</section>
-
-
 				<section>
-					<p class="fragment">
-						- What is FlowType?
-					</p>
-					<p class="fragment">
-						- Why do we need that?
-					</p>
-					<p class="fragment">
-						- Our use case.
-					</p>
-					<p class="fragment">
-						- FlowType vs TypeScript.
-					</p>
-					<p class="fragment">
-						- FlowType in action.
-					</p>
-					<p class="fragment">
-						- Flow Specific Features.
-
-							<pre>Difference types
-								<code>
-										type C = $Diff<{ a: string, b: number }, { a: string }>
-										// C is { b: number}
-								</code>
-							</pre>
-					</p>
-
-					<p class="fragment">
-						- What changes after you are FlowType?
-						More monomorphyc functions
-						clear code
-						clear separation of concerns
-						more declarative and functional code
-					</p>
-
-					<p class="fragment">
-						- When should I use a type checker?
-						<ul>
-								<li class="fragment">If you are over 21 :)</li>
-                <li class="fragment">if your project does not live for long: <em class="fragment">no</em>
-                <li class="fragment">if your project is really simple: <em class="fragment">no</em>
-                <li class="fragment">if there is a chance you will need to refactor the thing: <em class="fragment">yes</em>
-                <li class="fragment">if your system is very important or even crucial for the success of your company: <em class="fragment">yes</em>
-                <li class="fragment">if people enter or leave your team frequently: <em class="fragment">yes</em>
-            </ul>
-					</p>
-
-					<p class="fragment">
-						- How to proceed.
-						Start small, and add types gradually.
-						make use of flow-remove-types package.
-					</p>
+					<p>Maybe Types ?</p>
+					<pre><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsMaybeString(value: ?string) {
+							  // ...
+							}
+							
+							acceptsMaybeString("bar");     // Works!
+							acceptsMaybeString(undefined); // Works!
+							acceptsMaybeString(null);      // Works!
+							acceptsMaybeString();          // Works!							
+						</code></pre>
+					<aside class="notes">
+						In addition to the type in ?type, maybe types can also be null or void.
+					</aside>
 				</section>
-
 				<section>
-					<h1>Thank you!</h1>
-					
-					<h2>Questions / Discussion</h2>
-
-					<p>
-							Edgar Marukyan. CTO at <a href="https://www.renderforest.com/">RenderForest</a>
-							<br />Thanks to: <a href="http://zeigermann.eu">Oliver Zeigermann</a>
+					<p>Optional object properties</p>
+					<p class="fragment">
+						<code class="javascript">{ propertyName?: string }</code>
 					</p>
+					<pre class="fragment"><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsObject(value: { foo?: string }) {
+							  // ...
+							}
+							
+							acceptsObject({ foo: "bar" });     // Works!
+							acceptsObject({ foo: undefined }); // Works!
+							acceptsObject({ foo: null });      // Error!
+							acceptsObject({});                 // Works!
+						</code></pre>
+					<aside class="notes">
+						In addition to their set value type, these optional properties can either be void or omitted altogether, they cannot be null.
+					</aside>
 				</section>
-
 				<section>
-					<h2 style="text-transform: none;">Static Type Checking in JavaScript with FlowType</h2>
-					<p><b>Edgar Marukyan</b></p>
+					<p>Optional function parameters</p>
+					<p class="fragment">
+						<code class="javascript">function method(param?: string) { /* ... */ }</code>
+					</p>
+					<pre class="fragment"><code class="javascript" contenteditable data-trim>
+							// @flow
+							function acceptsOptionalString(value?: string) {
+							  // ...
+							}
+							
+							acceptsOptionalString("bar");     // Works!
+							acceptsOptionalString(undefined); // Works!
+							acceptsOptionalString(null);      // Error!
+							acceptsOptionalString();          // Works!
+						</code></pre>
+					<aside class="notes"></aside>
 				</section>
+				<section>
+					<h2>Literal Types</h2>
+					<pre><code class="javascript" contenteditable data-trim>
+						// @flow
+						function acceptsTwo(value: 2) {
+							// ...
+						}
+						
+						acceptsTwo(2);   // Works!
+						// $ExpectError
+						acceptsTwo(3);   // Error!
+						// $ExpectError
+						acceptsTwo("2"); // Error!
+						</code></pre>
+					<aside class="notes">
+						Կարելի է պարամետրը սահմանափակել կոնկրետ քանակի հնարավոր արժեքներով։
+					</aside>
+				</section>
+				<section>
+					<h2>Literal Types With Union Types</h2>
+					<pre><code class="javascript" contenteditable data-trim>
+						// @flow
+						function getColor(name: "success" | "warning" | "danger") {
+							switch (name) {
+							case "success" : return "green";
+							case "warning" : return "yellow";
+							case "danger"  : return "red";
+							}
+						}
+						
+						getColor("success"); // Works!
+						getColor("danger");  // Works!
+						// $ExpectError
+						getColor("error");   // Error!
+						</code></pre>
+					<aside class="notes">
+						Այս հնարավորությունը կիրառելով միավորված տեսակների հետ, ստանում ենք հզոր ստուգման մեխանիզմ։
+					</aside>
+				</section>
+				<section>
+					<h2></h2>
+					<pre><code class="javascript" contenteditable data-trim>
+						
+						</code></pre>
+					<aside class="notes">
+					</aside>
+				</section>
+			</section>
+
+			<!-- When to use -->
+			<section>
+				<section>
+					<h3>When should I avoid a type checker?</h3>
+					<ul>
+						<li class="fragment">if your project does not live for long.</li>
+						<li class="fragment">if your project is really simple.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>When should I use a type checker?</h3>
+					<ul>
+						<li class="fragment">if you intend to grow and maintain application for a long time,</li>
+						<li class="fragment">if there is a chance you will need to refactor it,</li>
+						<li class="fragment">if your system is very important or even crucial for the success of your company,</li>
+						<li class="fragment">if people enter or leave your team frequently.</li>
+					</ul>
+				</section>
+			</section>
+
+			<!-- Thank you -->
+			<section>
+				<h1>Thank you!</h1>
+				<h2>Questions / Discussion</h2>
+				<p>
+					Edgar Marukyan. CTO at
+					<a href="https://www.renderforest.com/">RenderForest</a>
+					<br />
+					<br />
+					<small>
+						Thanks to:
+						<a href="http://zeigermann.eu">Oliver Zeigermann</a>
+					</small>
+				</p>
+			</section>
 
 
 
@@ -289,24 +456,24 @@
 
 
 
-
-			</div>
 		</div>
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
 </html>
