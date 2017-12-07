@@ -1,18 +1,7 @@
 /* @flow */
 
-type TMainType = { x: string, y?: string }
+const x = 'a text'
+const getLength = (t: string) => t.length
 
-const a = {
-	x: '10',
-	y: '20'
-}
-
-const subA = {
-	x: '12123'
-}
-
-function subT (obj: $Subtype<TMainType>) {
-	return obj
-}
-
-subT ({ x: '' })
+// Error [flow] number (This type is incompatible with the expected param type of string)
+getLength(145)

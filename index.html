@@ -36,22 +36,48 @@
 
 			<!-- Contents. -->
 			<section>
-				<h2>Contents</h2>
-				<ul>
-					<li class="fragment">What is FlowType?</li>
-					<li class="fragment">Why do we need that?</li>
-					<li class="fragment">Our use case.</li>
-					<li class="fragment">FlowType vs TypeScript.</li>
-					<li class="fragment">FlowType in action.</li>
-					<li class="fragment">When should I use a type checker?</li>
-					<li class="fragment">How to proceed?</li>
-				</ul>
+				<section>
+					<h2>Contents</h2>
+					<ul>
+						<li class="fragment">What is FlowType?</li>
+						<li class="fragment">Why do we need that?</li>
+						<li class="fragment">Our use case.</li>
+						<li class="fragment">FlowType vs TypeScript.</li>
+						<li class="fragment">FlowType in action.</li>
+						<li class="fragment">When should I use a type checker?</li>
+						<li class="fragment">How to proceed?</li>
+					</ul>
+				</section>
 			</section>
 
 			<!-- What is a FlowType -->
 			<section>
-				<h2>What is a FlowType?</h2>
-				<p class="fragment">FLOW IS A STATIC TYPE CHECKER FOR JAVASCRIPT.</p>
+				<section>
+					<h2>What is a FlowType?</h2>
+					<p>FLOW IS A STATIC TYPE CHECKER FOR JAVASCRIPT.</p>
+				</section>
+				<section>
+					<p>Runtime Erros Look like...</p>
+					<p class="fragment">
+						<img src="./images/imginc167.gif" />
+					</p>
+					<p class="fragment">
+						<img src="./images/runtime-error.png" />
+					</p>
+				</section>
+				<section>
+					<p>Static Type Checking Looks like...</p>
+					<pre class="fragment"><code class="javascript" contenteditable data-trim>
+						/* @flow */
+						
+						const x = 'a text'
+						const getLength = (t: string) => t.length
+						
+						// Error [flow] number (This type is incompatible with
+						// the expected param type of string)
+						getLength(145)							
+						</code></pre>
+				</section>
 				<aside class="notes">
 					-Runtime checking vs Static checking Ռանթայմ ստուգումը կատարվում է բռաուզեռում կամ սերվերային միջավայրում, որի ժամանակ ստացված
 					սխալները շատ հաճախ ծրագիրը դարձնում են անվերականգնելի կամ անկանխատեսելի։ Ինչպես գիտենք, JavaScript֊ը խիստ տիպիզացված
@@ -63,19 +89,23 @@
 
 			<!-- Why do we need that? -->
 			<section>
-				<h2>Why do we need that?</h2>
-				<ul>
-					<li class="fragment">Removing Doubt From Complexity</li>
-					<li class="fragment">Makes code more clear/readable</li>
-					<li class="fragment">Better IDE support</li>
-					<li class="fragment">Refactor safely.</li>
-					<li class="fragment">Collaborate safely.</li>
-					<li class="fragment">Grow codebase safely.</li>
-					<li class="fragment">Skip corner cases in unit tests.</li>
-					<li class="fragment">Deploy with confident.</li>
-					<li class="fragment">Reduce runtime errors to 0.</li>
-					<li class="fragment">Sleep well :)</li>
-				</ul>
+				<section>
+					<h2>Why do we need that?</h2>
+				</section>
+				<section>
+					<ul>
+						<li class="fragment">Removing Doubt From Complexity</li>
+						<li class="fragment">Makes code more clear/readable</li>
+						<li class="fragment">Better IDE support</li>
+						<li class="fragment">Refactor safely.</li>
+						<li class="fragment">Collaborate safely.</li>
+						<li class="fragment">Grow codebase safely.</li>
+						<li class="fragment">Skip corner cases in unit tests.</li>
+						<li class="fragment">Deploy with confident.</li>
+						<li class="fragment">Reduce runtime errors to 0.</li>
+						<li class="fragment">Sleep well :)</li>
+					</ul>
+				</section>
 			</section>
 
 			<!-- Our Use Case -->
@@ -148,7 +178,6 @@
 				</section>
 				<section>
 					<h4>Flow does not infer string as the return type</h4>
-					<p class="fragment">The inferred type is something else</p>
 					<pre class="fragment"><code class="typescript" contenteditable data-trim>
 							// error: return undefined.
 							// This type is incompatible with string
