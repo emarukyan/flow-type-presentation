@@ -45,7 +45,6 @@
 						<li class="fragment">FlowType vs TypeScript.</li>
 						<li class="fragment">FlowType in action.</li>
 						<li class="fragment">When should I use a type checker?</li>
-						<li class="fragment">How to proceed?</li>
 					</ul>
 				</section>
 			</section>
@@ -415,12 +414,24 @@
 					</aside>
 				</section>
 				<section>
-					<h2></h2>
+					<h2>Define Your Own Types</h2>
 					<pre><code class="javascript" contenteditable data-trim>
+						type TSimpleObject = {
+							id: number,
+							value: string
+						}
 						
+						const f = (obj: TSimpleObject) => {
+							return obj.value * 100
+						}							
 						</code></pre>
-					<aside class="notes">
-					</aside>
+					<p class="fragment">
+						string (The operand of an arithmetic operation must be a number.)
+						<br /> (property) value: string
+					</p>
+				</section>
+				<section>
+					<h2>Go To Examples</h2>
 				</section>
 			</section>
 

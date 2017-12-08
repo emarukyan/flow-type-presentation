@@ -7,7 +7,6 @@
 - FlowType vs TypeScript.
 - FlowType in action.
 - When should I use a type checker?
-- How to proceed?
 
 How to start presentation.
 
